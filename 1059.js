@@ -19,40 +19,11 @@ let lines = conteudoArquivo.split(quebraLinhaWindows);
 
 ///////////////////////COLAR NO BEECROWD O CODIGO DESTE PONTO EM DIANTE///////////////////
 //para ler linhas com mais de um valor na mesma linha use o comando a seguir
+//let [inicial, final] = lines.shift().split(" "); 
 //console.clear();
 //para ler linhas com um unico valor na mesma linha use o comando a seguir
 //let codigo = lines.shift();
 
-let [inicial, final] = lines.shift().split(" "); 
-
-const HORAS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24 ]
-inicial = parseInt(inicial);
-final = parseInt(final);
-
-if (inicial == final){
-    console.log("O JOGO DUROU 24 HORA(S)")
-}else{
-    for (let i = 0; i <= final; i++){
-        for (let j = inicial; j == i; j++) {
-            if(j == i){
-                console.log(`O JOGO DUROU ${i} HORA(S)`);
-            }
-        }
-    }
+for (let i = 2; i <= 100; i += 2){
+    console.log(i)
 }
-
-
-
-
-
-
-
-
-
-
-
-/*
-if (inicial > final) {
-    let result = inicial - final
-}
-*/

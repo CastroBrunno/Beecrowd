@@ -19,40 +19,31 @@ let lines = conteudoArquivo.split(quebraLinhaWindows);
 
 ///////////////////////COLAR NO BEECROWD O CODIGO DESTE PONTO EM DIANTE///////////////////
 //para ler linhas com mais de um valor na mesma linha use o comando a seguir
+//let [inicial, final] = lines.shift().split(" "); 
 //console.clear();
 //para ler linhas com um unico valor na mesma linha use o comando a seguir
-//let codigo = lines.shift();
 
-let [inicial, final] = lines.shift().split(" "); 
+let salario = lines.shift();
+salario = parseFloat(salario)
 
-const HORAS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24 ]
-inicial = parseInt(inicial);
-final = parseInt(final);
+let percentual;
+let ajuste;
 
-if (inicial == final){
-    console.log("O JOGO DUROU 24 HORA(S)")
-}else{
-    for (let i = 0; i <= final; i++){
-        for (let j = inicial; j == i; j++) {
-            if(j == i){
-                console.log(`O JOGO DUROU ${i} HORA(S)`);
-            }
-        }
-    }
+if (salario <= 400.00) {
+    percentual = 15;
+} else if (salario <= 800.00) {
+    percentual = 12;
+} else if (salario <= 1200.00) {
+    percentual = 10;
+} else if (salario <= 2000.00) {
+    percentual = 7;
+} else {
+    percentual = 4;
 }
 
+ajuste = parseFloat(salario * (percentual / 100)).toFixed(2);
+let salarioFinal = parseFloat(salario + parseFloat(ajuste)).toFixed(2);
 
-
-
-
-
-
-
-
-
-
-/*
-if (inicial > final) {
-    let result = inicial - final
-}
-*/
+console.log(`Novo salario: ${salarioFinal}`);
+console.log(`Reajuste ganho: ${ajuste}`);
+console.log(`Em percentual: ${percentual} %`);

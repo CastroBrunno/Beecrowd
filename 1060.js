@@ -19,40 +19,34 @@ let lines = conteudoArquivo.split(quebraLinhaWindows);
 
 ///////////////////////COLAR NO BEECROWD O CODIGO DESTE PONTO EM DIANTE///////////////////
 //para ler linhas com mais de um valor na mesma linha use o comando a seguir
+//let [inicial, final] = lines.shift().split(" "); 
 //console.clear();
 //para ler linhas com um unico valor na mesma linha use o comando a seguir
-//let codigo = lines.shift();
 
-let [inicial, final] = lines.shift().split(" "); 
+let a = Number(lines.shift());
+let b = Number(lines.shift());
+let c = Number(lines.shift());
+let d = Number(lines.shift());
+let e = Number(lines.shift());
+let f = Number(lines.shift());
 
-const HORAS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24 ]
-inicial = parseInt(inicial);
-final = parseInt(final);
 
-if (inicial == final){
-    console.log("O JOGO DUROU 24 HORA(S)")
-}else{
-    for (let i = 0; i <= final; i++){
-        for (let j = inicial; j == i; j++) {
-            if(j == i){
-                console.log(`O JOGO DUROU ${i} HORA(S)`);
-            }
-        }
-    }
+let result = ehPositivo(a);
+result = result + ehPositivo(b);
+result = result + ehPositivo(c);
+result = result + ehPositivo(d);
+result = result + ehPositivo(e);
+result = result + ehPositivo(f);
+
+console.log(result)
+
+
+
+
+function ehPositivo(value) {
+    let contador = 0;
+    if (value > 0){
+        contador++;
+    } 
+    return contador;
 }
-
-
-
-
-
-
-
-
-
-
-
-/*
-if (inicial > final) {
-    let result = inicial - final
-}
-*/

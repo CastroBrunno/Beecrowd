@@ -19,40 +19,45 @@ let lines = conteudoArquivo.split(quebraLinhaWindows);
 
 ///////////////////////COLAR NO BEECROWD O CODIGO DESTE PONTO EM DIANTE///////////////////
 //para ler linhas com mais de um valor na mesma linha use o comando a seguir
+//let [inicial, final] = lines.shift().split(" "); 
 //console.clear();
 //para ler linhas com um unico valor na mesma linha use o comando a seguir
-//let codigo = lines.shift();
+let ddd = lines.shift();
 
-let [inicial, final] = lines.shift().split(" "); 
+switch (ddd) {
+    case 61:
+        console.log("Brasilia")
+    break;
 
-const HORAS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24 ]
-inicial = parseInt(inicial);
-final = parseInt(final);
+    case 71:
+        console.log("Salvador")
+    break;
 
-if (inicial == final){
-    console.log("O JOGO DUROU 24 HORA(S)")
-}else{
-    for (let i = 0; i <= final; i++){
-        for (let j = inicial; j == i; j++) {
-            if(j == i){
-                console.log(`O JOGO DUROU ${i} HORA(S)`);
-            }
-        }
-    }
+    case 11:
+        console.log("Sao Paulo")
+    break;
+
+    case 21:
+        console.log("Rio de Janeiro")
+    break;
+
+    case 32:
+        console.log("Juiz de Fora")
+    break;
+
+    case 19:
+        console.log("Campinas")
+    break;
+
+    case 27:
+        console.log("Vitoria")
+    break;
+
+    case 31:
+        console.log("Belo Horizonte")
+    break;
+
+    default :
+        console.log("DDD nao cadastrado")
+    break;
 }
-
-
-
-
-
-
-
-
-
-
-
-/*
-if (inicial > final) {
-    let result = inicial - final
-}
-*/

@@ -19,40 +19,32 @@ let lines = conteudoArquivo.split(quebraLinhaWindows);
 
 ///////////////////////COLAR NO BEECROWD O CODIGO DESTE PONTO EM DIANTE///////////////////
 //para ler linhas com mais de um valor na mesma linha use o comando a seguir
+//let [inicial, final] = lines.shift().split(" "); 
 //console.clear();
 //para ler linhas com um unico valor na mesma linha use o comando a seguir
-//let codigo = lines.shift();
 
-let [inicial, final] = lines.shift().split(" "); 
+let renda = lines.shift();
+let porcentagem
+renda = parseFloat(renda).toFixed(2);
 
-const HORAS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24 ]
-inicial = parseInt(inicial);
-final = parseInt(final);
-
-if (inicial == final){
-    console.log("O JOGO DUROU 24 HORA(S)")
-}else{
-    for (let i = 0; i <= final; i++){
-        for (let j = inicial; j == i; j++) {
-            if(j == i){
-                console.log(`O JOGO DUROU ${i} HORA(S)`);
-            }
-        }
-    }
+if(renda <= 2000.00){
+    console.log("isento");
+} else if(renda <= 3000.00){
+    porcentagem = 8
+} else if(renda <+ 4500.00){
+    porcentagem = 18
+} else if(renda > 4500.00){
+    porcentagem = 28
 }
 
+imposto = (renda * (porcentagem / 100)).toFixed(2);
 
-
-
-
-
-
-
-
-
-
-/*
-if (inicial > final) {
-    let result = inicial - final
+if(renda <= 2000.00){
+    console.log("")
+} else if(renda == 3002.00) {
+    imposto = parseFloat((1000.00 * (8 / 100)).toFixed(2));
+    imposto = parseFloat(imposto + (2.00 *(18/100)))
+    console.log(`R$ ${imposto}`)
+} else{
+    console.log(`R$ ${imposto}`)
 }
-*/

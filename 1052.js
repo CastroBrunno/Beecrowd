@@ -19,40 +19,59 @@ let lines = conteudoArquivo.split(quebraLinhaWindows);
 
 ///////////////////////COLAR NO BEECROWD O CODIGO DESTE PONTO EM DIANTE///////////////////
 //para ler linhas com mais de um valor na mesma linha use o comando a seguir
+//let [inicial, final] = lines.shift().split(" "); 
 //console.clear();
 //para ler linhas com um unico valor na mesma linha use o comando a seguir
-//let codigo = lines.shift();
 
-let [inicial, final] = lines.shift().split(" "); 
+let mounth = lines.shift();
+mounth = parseInt(mounth)
 
-const HORAS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24 ]
-inicial = parseInt(inicial);
-final = parseInt(final);
+switch (mounth) {
+    case 1:
+        console.log("January")
+    break;
 
-if (inicial == final){
-    console.log("O JOGO DUROU 24 HORA(S)")
-}else{
-    for (let i = 0; i <= final; i++){
-        for (let j = inicial; j == i; j++) {
-            if(j == i){
-                console.log(`O JOGO DUROU ${i} HORA(S)`);
-            }
-        }
-    }
+    case 2:
+        console.log("February")
+    break;
+
+    case 3:
+        console.log("March")
+    break;
+
+    case 4:
+        console.log("April")
+    break;
+
+    case 5:
+        console.log("May")
+    break;
+
+    case 6:
+        console.log("June")
+    break;
+
+    case 7:
+        console.log("July")
+    break;
+
+    case 8:
+        console.log("August")
+    break;
+
+    case 9:
+        console.log("September")
+    break;
+
+    case 10:
+        console.log("October")
+    break;
+
+    case 11:
+        console.log("November")
+    break;
+
+    case 12:
+        console.log("December")
+    break;
 }
-
-
-
-
-
-
-
-
-
-
-
-/*
-if (inicial > final) {
-    let result = inicial - final
-}
-*/
