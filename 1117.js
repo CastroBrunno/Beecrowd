@@ -23,27 +23,36 @@ let lines = conteudoArquivo.split(quebraLinhaWindows);
 //console.clear();
 //para ler linhas com um unico valor na mesma linha use o comando a seguir
 
+let avaliacao1 = 0
+let avaliacao2 = 0
 
-let a = Number(lines.shift());
-let b = Number(lines.shift());
-let c = Number(lines.shift());
-let d = Number(lines.shift());
-let e = Number(lines.shift());
+let notaAvaliacao1
+let notaAvaliacao2
+let media
+let nota
 
-let qtdePares = 0
+while (avaliacao1 == 0 || avaliacao2 == 0){
+    nota = lines.shift();
+    if (avaliacao1 == 0) {
+        if (nota >= 0 && nota <= 10) {
+            avaliacao1++
+            notaAvaliacao1 = Number(nota)
+        }else{
+            console.log("nota invalida")
+        }
+        
+    }else if (avaliacao2 == 0){
+        if (nota >= 0 && nota <= 10) {
+            avaliacao2++
+            notaAvaliacao2 = Number(nota)
+        }else{
+            console.log("nota invalida")
 
-ehPar(a);
-ehPar(b);
-ehPar(c);
-ehPar(d);
-ehPar(e);
-
-console.log(qtdePares)
-
-
-
-function ehPar(value){
-    if(value % 2 === 0){
-        qtdePares++
+        }
     }
+
+
 }
+
+media = (notaAvaliacao1 + notaAvaliacao2) / 2
+console.log(`media = ${media}`)

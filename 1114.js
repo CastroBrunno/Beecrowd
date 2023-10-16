@@ -23,27 +23,10 @@ let lines = conteudoArquivo.split(quebraLinhaWindows);
 //console.clear();
 //para ler linhas com um unico valor na mesma linha use o comando a seguir
 
+let senha = lines.shift();
 
-let a = Number(lines.shift());
-let b = Number(lines.shift());
-let c = Number(lines.shift());
-let d = Number(lines.shift());
-let e = Number(lines.shift());
-
-let qtdePares = 0
-
-ehPar(a);
-ehPar(b);
-ehPar(c);
-ehPar(d);
-ehPar(e);
-
-console.log(qtdePares)
-
-
-
-function ehPar(value){
-    if(value % 2 === 0){
-        qtdePares++
-    }
+while (senha != 2002) {
+    console.log("Senha Invalida")
+    senha = lines.shift();
 }
+console.log("Acesso Permitido")

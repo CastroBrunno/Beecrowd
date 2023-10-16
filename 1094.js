@@ -22,28 +22,23 @@ let lines = conteudoArquivo.split(quebraLinhaWindows);
 //let [inicial, final] = lines.shift().split(" "); 
 //console.clear();
 //para ler linhas com um unico valor na mesma linha use o comando a seguir
+//let codigo = lines.shift();
 
+let casos = Number(lines[0]);
+let ratos = 0
+let sapos = 0
+let coelhos = 0
 
-let a = Number(lines.shift());
-let b = Number(lines.shift());
-let c = Number(lines.shift());
-let d = Number(lines.shift());
-let e = Number(lines.shift());
+for (let repeticoes = 1; repeticoes < casos; repeticoes++){
+    for (let i = 0; i < lines[i].length; i++) {
+        for (let j = 0; lines[i].charAt(j); j++){
+            
+        }
 
-let qtdePares = 0
-
-ehPar(a);
-ehPar(b);
-ehPar(c);
-ehPar(d);
-ehPar(e);
-
-console.log(qtdePares)
-
-
-
-function ehPar(value){
-    if(value % 2 === 0){
-        qtdePares++
     }
+
 }
+
+console.log(ratos)
+console.log(sapos)
+console.log(coelhos)

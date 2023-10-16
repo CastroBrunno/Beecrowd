@@ -1,2 +1,2 @@
 
-}else{
+const quebraLinhaWindows = '\r\n'

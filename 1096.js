@@ -19,31 +19,18 @@ let lines = conteudoArquivo.split(quebraLinhaWindows);
 
 ///////////////////////COLAR NO BEECROWD O CODIGO DESTE PONTO EM DIANTE///////////////////
 //para ler linhas com mais de um valor na mesma linha use o comando a seguir
-//let [inicial, final] = lines.shift().split(" "); 
+let [inicial, final] = lines.shift().split(" "); 
 //console.clear();
 //para ler linhas com um unico valor na mesma linha use o comando a seguir
+//let codigo = lines.shift();
 
-
-let a = Number(lines.shift());
-let b = Number(lines.shift());
-let c = Number(lines.shift());
-let d = Number(lines.shift());
-let e = Number(lines.shift());
-
-let qtdePares = 0
-
-ehPar(a);
-ehPar(b);
-ehPar(c);
-ehPar(d);
-ehPar(e);
-
-console.log(qtdePares)
-
-
-
-function ehPar(value){
-    if(value % 2 === 0){
-        qtdePares++
+let j = 7
+let i = -1
+for (let repeticoes = 0; repeticoes < 15; repeticoes += + 3){
+    i = i + 2
+    for(let repetir = 0; repetir < 3; repetir++){
+        console.log(`I=${i} J=${j}`)
+        j = j - 1
     }
+    j = 7
 }

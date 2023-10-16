@@ -31,6 +31,9 @@ let d = Number(lines.shift());
 let e = Number(lines.shift());
 
 let qtdePares = 0
+let qtdeImpares = 0
+let qtdePositivos = 0
+let qtdeNegativos = 0
 
 ehPar(a);
 ehPar(b);
@@ -38,12 +41,30 @@ ehPar(c);
 ehPar(d);
 ehPar(e);
 
-console.log(qtdePares)
+ehPositivo(a);
+ehPositivo(b);
+ehPositivo(c);
+ehPositivo(d);
+ehPositivo(e);
 
+console.log(`${qtdePares} valor(es) par(es)`);
+console.log(`${qtdeImpares} valor(es) impar(es)`);
+console.log(`${qtdePositivos} valor(es) positivo(s)`);
+console.log(`${qtdeNegativos} valor(es) negativo(s)`);
 
 
 function ehPar(value){
     if(value % 2 === 0){
         qtdePares++
+    } else if (value != 0){
+        qtdeImpares++
+    }
+}
+
+function ehPositivo(value){
+    if(value > 0){
+        qtdePositivos++
+    } else if( value < 0){
+        qtdeNegativos++
     }
 }

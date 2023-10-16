@@ -23,27 +23,16 @@ let lines = conteudoArquivo.split(quebraLinhaWindows);
 //console.clear();
 //para ler linhas com um unico valor na mesma linha use o comando a seguir
 
-
-let a = Number(lines.shift());
-let b = Number(lines.shift());
-let c = Number(lines.shift());
-let d = Number(lines.shift());
-let e = Number(lines.shift());
-
-let qtdePares = 0
-
-ehPar(a);
-ehPar(b);
-ehPar(c);
-ehPar(d);
-ehPar(e);
-
-console.log(qtdePares)
+let x = parseInt(lines.shift());
+let qtdeImpares = []
 
 
-
-function ehPar(value){
-    if(value % 2 === 0){
-        qtdePares++
+for(let i = x; i <= (x + 11) ; i++){
+    if((i % 2) !== 0){
+        qtdeImpares.push(i)
     }
 }
+
+for (let i = 0; i < qtdeImpares.length; i++) {
+    console.log(qtdeImpares[i]);
+  }

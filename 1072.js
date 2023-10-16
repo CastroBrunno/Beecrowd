@@ -17,33 +17,18 @@ const quebraLinhaWindows = '\r\n'
 
 let lines = conteudoArquivo.split(quebraLinhaWindows);
 
-///////////////////////COLAR NO BEECROWD O CODIGO DESTE PONTO EM DIANTE///////////////////
-//para ler linhas com mais de um valor na mesma linha use o comando a seguir
-//let [inicial, final] = lines.shift().split(" "); 
-//console.clear();
-//para ler linhas com um unico valor na mesma linha use o comando a seguir
+let dentro = 0
+let fora = 0
 
-
-let a = Number(lines.shift());
-let b = Number(lines.shift());
-let c = Number(lines.shift());
-let d = Number(lines.shift());
-let e = Number(lines.shift());
-
-let qtdePares = 0
-
-ehPar(a);
-ehPar(b);
-ehPar(c);
-ehPar(d);
-ehPar(e);
-
-console.log(qtdePares)
-
-
-
-function ehPar(value){
-    if(value % 2 === 0){
-        qtdePares++
-    }
+for(let i = 1; i <= lines[0] ; i++){
+   if(lines[i] >= 10 && lines[i] <= 20){
+    dentro++
+   }else{
+    fora++
+   }
 }
+
+console.log(`${dentro} in`)
+console.log(`${fora} out`)
+
+

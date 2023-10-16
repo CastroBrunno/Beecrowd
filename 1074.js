@@ -22,28 +22,45 @@ let lines = conteudoArquivo.split(quebraLinhaWindows);
 //let [inicial, final] = lines.shift().split(" "); 
 //console.clear();
 //para ler linhas com um unico valor na mesma linha use o comando a seguir
+//let codigo = lines.shift();
 
 
-let a = Number(lines.shift());
-let b = Number(lines.shift());
-let c = Number(lines.shift());
-let d = Number(lines.shift());
-let e = Number(lines.shift());
+let frase
 
-let qtdePares = 0
+for (let i = 0; i < lines[0]; i++){
+    let valor = lines[i + 1]
 
-ehPar(a);
-ehPar(b);
-ehPar(c);
-ehPar(d);
-ehPar(e);
+    if( ehPar(valor) == true){
+        frase = "EVEN"
+    }else if( ehPar(valor) == false){
+        frase = "ODD"
+    }
 
-console.log(qtdePares)
+    if (ehPositivo(valor) === 0){
+        frase = "NULL"
+    }else if(ehPositivo(valor) == true){
+        frase += " POSITIVE"
+    }else{
+        frase += " NEGATIVE"
+    }
 
+    console.log(frase)
+}
 
+function ehPar(valor){
+    if(valor % 2 == 0){
+        return true
+    }else{
+        return false
+    }
+}
 
-function ehPar(value){
-    if(value % 2 === 0){
-        qtdePares++
+function ehPositivo(valor){
+    if(valor > 0){
+        return true
+    }else if(valor < 0){
+        return false
+    }else{
+        return 0
     }
 }
