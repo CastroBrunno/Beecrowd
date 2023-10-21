@@ -22,4 +22,24 @@ let lines = conteudoArquivo.split(quebraLinhaWindows);
 //let [inicial, final] = lines.shift().split(" "); 
 //console.clear();
 //para ler linhas com um unico valor na mesma linha use o comando a seguir
-//let codigo = lines.shift();
+
+let X = lines.shift();
+let Y = lines.shift();
+let resto
+
+if (X < Y) {
+    for (let i = X; i < Y; i++) {
+        resto = i % 5
+        if (resto == 2 || resto == 3) {
+            console.log(i)
+        }
+        
+    }
+}else{
+    for (let i = Y; i < X; i++) {
+        resto = i % 5
+        if (resto == 2 || resto == 3) {
+            console.log(i)
+        }
+    }
+}

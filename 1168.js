@@ -23,3 +23,29 @@ let lines = conteudoArquivo.split(quebraLinhaWindows);
 //console.clear();
 //para ler linhas com um unico valor na mesma linha use o comando a seguir
 //let codigo = lines.shift();
+
+//cada indice do vetor tem a quantidade equivalente de 
+//leds para compor o numero
+const NUMERO_LEDS = [6,2,5,5,4,5,6,3,7,6]
+
+let caracteres
+let qtdeLeds
+let numero
+
+let total = lines.shift()
+
+for(let i = 0; i < total; i++){
+    numero = lines[i]
+    qtdeLeds = 0
+
+    for(let indice = 0; indice < numero.length; indice++){
+        caractere = numero[indice]
+        qtdeLeds = qtdeLeds + adicionaQtdeLeds(NUMERO_LEDS, caracteres)
+    }
+    
+    console.log(qtdeLeds + " leds")
+}
+
+function adicionaQtdeLeds(NUMERO_LEDS, caracteres){
+    return NUMERO_LEDS[caracteres]
+}

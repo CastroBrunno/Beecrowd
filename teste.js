@@ -17,75 +17,16 @@ const quebraLinhaWindows = '\r\n'
 
 let lines = conteudoArquivo.split(quebraLinhaWindows);
 
-let lerValores = []
-let temp = ""
-let soma = 0
-let tabelaAscii = ""
-let rato = 0
-let sapo = 0
-let coelho = 0
-let totalRatos = 0
-let totalSapos = 0
-let totalCoelhos = 0
+const NUMERO_DE_LEDS = [6,2,5,5,4,5,6,3,7,6]
+let numero
+let caracter
 
-for (let i = 0; i < lines[0]; i++){
-    lerValores = lines[i + 1]
-    temp = ""
-    soma = 0
-   
-
-    let invertido = lerValores.split('').reverse().join('')
-    if(invertido[0] == "R"){
-        rato++
-        for(let j = 0; j < lerValores.length; j++){
-            if (!isNaN(lerValores.charAt(j))) { // Verifica se o caractere é um número
-                temp += lerValores.charAt(j)
-                
-            }
-            
-        }
-    
-        soma += Number(temp)
-        totalRatos = soma * rato
-        temp = ""
-        soma = 0
-
-    }else if(invertido[0] == "S"){
-        sapo++
-        for(let j = 0; j < lerValores.length; j++){
-            if (!isNaN(lerValores.charAt(j))) { // Verifica se o caractere é um número
-                temp += lerValores.charAt(j)
-                
-            }
-            
-        }
-    
-        soma += Number(temp)
-        totalSapos = soma * sapo
-        temp = ""
-        soma = 0
-
-    }else if (invertido[0] == "C"){
-        coelho++
-        for(let j = 0; j < lerValores.length; j++){
-            if (!isNaN(lerValores.charAt(j))) { // Verifica se o caractere é um número
-                temp += lerValores.charAt(j)
-                
-            }
-            
-        }
-    
-       soma += Number(temp)
-        totalCoelhos = soma * coelho
-        temp = ""
-        soma = 0
-
+for (let repeticoes = 0; repeticoes < lines[0]; repeticoes++) {
+    numero = lines[repeticoes + 1]
+    let qtDeLeds = 0
+    for (let i = 0; i < numero.length; i++) {
+        caracter = numero[i]
+        qtDeLeds += NUMERO_DE_LEDS[caracter]
     }
-    
+    console.log(qtDeLeds + " leds")
 }
-
-console.log(`Total: ${totalCoelhos + totalRatos + totalSapos} cobaias`)
-console.log(`Total de coelhos: ${totalCoelhos}`)
-console.log(`Total de ratos: ${totalRatos}`)
-console.log(`Total de sapos: ${totalSapos}`)
-

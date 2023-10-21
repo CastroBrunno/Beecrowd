@@ -1,3 +1,5 @@
+var prompt = require('prompt-sync')();
+
 //importo o modulo fs (filesystem) para trabalhar com arquivos e diretorios
 const fileSystem = require('fs')
 
@@ -22,4 +24,41 @@ let lines = conteudoArquivo.split(quebraLinhaWindows);
 //let [inicial, final] = lines.shift().split(" "); 
 //console.clear();
 //para ler linhas com um unico valor na mesma linha use o comando a seguir
-//let codigo = lines.shift();
+
+
+let repeticao = 1
+
+while (repeticao == 1) {
+   
+    let notas
+    let nota1 = 0
+    let nota2 = 0
+    let media = 0
+    
+    while (nota1 == 0 || nota2 == 0) {
+        notas = lines.shift();
+        notas = Number(notas)
+        while (notas < 0 || notas > 10){
+            console.log("nota invalida")
+            notas = lines.shift();
+            notas = Number(notas)
+        }
+        
+    if (nota1 == 0){
+        nota1 = notas
+    }else if (nota2 == 0){
+        nota2 = notas
+    }
+}
+
+media = (nota1 + nota2) / 2
+console.log(`media = ${media.toFixed(2)}`)
+console.log("novo calculo (1-sim 2-nao)")
+repeticao = lines.shift()
+
+while (repeticao != 1 && repeticao != 2) {
+    console.log("novo calculo (1-sim 2-nao)")
+    repeticao = lines.shift()
+}
+
+}

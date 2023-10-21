@@ -22,4 +22,42 @@ let lines = conteudoArquivo.split(quebraLinhaWindows);
 //let [inicial, final] = lines.shift().split(" "); 
 //console.clear();
 //para ler linhas com um unico valor na mesma linha use o comando a seguir
-//let codigo = lines.shift();
+
+var codigo = 1
+let gasolina = 0
+let alcool = 0
+let diesel = 0
+
+
+while (codigo != 4) {
+    codigo = 0
+
+    while (codigo < 1 || codigo > 4) {
+        //o codigo ficará em loop aqui ate que o usuario informe um numero entre 1 e 4
+        codigo = lines.shift();
+        codigo = Number(codigo)
+    }
+
+    switch (codigo) {
+        case 1:
+            alcool++
+            break;
+
+        case 2:
+            gasolina++
+            break;
+
+        case 3:
+            diesel++
+            break;
+    }
+
+}
+
+let resultado = `MUITO OBRIGADO
+Alcool: ${alcool}
+Gasolina: ${gasolina}
+Diesel: ${diesel}`
+
+console.log(resultado)
+
