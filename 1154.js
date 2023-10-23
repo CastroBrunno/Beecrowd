@@ -23,17 +23,23 @@ let lines = conteudoArquivo.split(quebraLinhaWindows);
 //console.clear();
 //para ler linhas com um unico valor na mesma linha use o comando a seguir
 
-let codigo = lines.shift();
-let valor1 = 0
-let valor2 = 0
-let valor3 = 0
+let idades = lines.shift();
+idades = Number(idades)
+let vetorIdades = []
+let soma = 0
+let cont = 0
+let media
 
-
-for (let i = 0; i < codigo; i++) {
-    valor1 = valor3 + 1
-    valor2 = valor1 + 1
-    valor3 = valor2 + 1
-
-    console.log(`${valor1} ${valor2} ${valor3} PUM`)
-    valor3 = valor3 + 1
+while (idades > 0) {
+    vetorIdades.push(idades)
+    idades = lines.shift();
+    idades = Number(idades)
+    cont++
 }
+
+for (let i = 0; i < vetorIdades.length; i++) {
+    soma += vetorIdades[i]
+}
+
+media = (soma / cont).toFixed(2)
+console.log(media)

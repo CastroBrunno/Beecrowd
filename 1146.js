@@ -24,16 +24,15 @@ let lines = conteudoArquivo.split(quebraLinhaWindows);
 //para ler linhas com um unico valor na mesma linha use o comando a seguir
 
 let codigo = lines.shift();
-let valor1 = 0
-let valor2 = 0
-let valor3 = 0
+let valores = []
 
-
-for (let i = 0; i < codigo; i++) {
-    valor1 = valor3 + 1
-    valor2 = valor1 + 1
-    valor3 = valor2 + 1
-
-    console.log(`${valor1} ${valor2} ${valor3} PUM`)
-    valor3 = valor3 + 1
+while (codigo != 0) {
+    for (let i = 1; i <= codigo; i++) {
+        valores.push(i)
+        
+    }
+    console.log(valores.join(" "))
+    codigo = lines.shift()
+    valores = []
 }
+

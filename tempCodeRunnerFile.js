@@ -1,2 +1,1 @@
-
-const quebraLinhaWindows = '\r\n'
+somaColuna3DoMeio += somaColuna3

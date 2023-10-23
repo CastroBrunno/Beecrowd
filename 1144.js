@@ -23,17 +23,54 @@ let lines = conteudoArquivo.split(quebraLinhaWindows);
 //console.clear();
 //para ler linhas com um unico valor na mesma linha use o comando a seguir
 
-let codigo = lines.shift();
-let valor1 = 0
-let valor2 = 0
-let valor3 = 0
+let repeticao = lines.shift();
+let j
+let coluna1 = 0
+
+let coluna2 = 0
+let soma2 = -1
+let cont = 1
+
+let coluna3 = 0
+let soma3 = -1
+let somaColuna3 = 6
+let somaColuna3DoMeio = 5
 
 
-for (let i = 0; i < codigo; i++) {
-    valor1 = valor3 + 1
-    valor2 = valor1 + 1
-    valor3 = valor2 + 1
 
-    console.log(`${valor1} ${valor2} ${valor3} PUM`)
-    valor3 = valor3 + 1
+
+
+
+
+for (let i = 0; i < (repeticao); i++) {
+    j = 0
+    coluna1++
+    if (i > 1) {
+        soma2 += i + cont
+        cont++
+    }else{
+        soma2 += 1
+    }
+
+    if (i > 0) {
+        somaColuna3 += 6
+        somaColuna3DoMeio += coluna3 + somaColuna3
+        coluna3 += somaColuna3DoMeio
+    }else{
+        coluna3++
+    }
+
+
+
+    coluna2 += soma2
+    for (j = 0; j < 2; j++) {
+        soma2++
+        soma3++
+        coluna2 = + soma2
+        coluna3 += soma3
+        console.log(coluna1, coluna2, coluna3)
+        soma3 = 0
+        
+    }
+    
 }
