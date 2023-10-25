@@ -15,9 +15,20 @@ const conteudoArquivo = fileSystem.readFileSync(enderecoDesteScriptJS + '\\dev\\
 //se você estiver utilizando linux coloque \n se for windows coloque \r\n
 const quebraLinhaWindows = '\r\n'
 
-for(let i = 0; i < 10; i++){
-    if (lines[i] <= 0) {
-        lines[i] = 1
-    }
-    console.log(`x[${i}] = ${Number(lines[i])}`)
+let lines = conteudoArquivo.split(quebraLinhaWindows);
+
+///////////////////////COLAR NO BEECROWD O CODIGO DESTE PONTO EM DIANTE///////////////////
+//para ler linhas com mais de um valor na mesma linha use o comando a seguir
+//let [inicial, final] = lines.shift().split(" "); 
+//console.clear();
+//para ler linhas com um unico valor na mesma linha use o comando a seguir
+
+let codigo = lines.shift();
+let vetor = []
+
+for (let i = 0; i < 10; i++) {
+    vetor.push(codigo)
+    codigo = codigo * 2
+    console.log(`N[${i}] = ${vetor[i]}`)
 }
+
