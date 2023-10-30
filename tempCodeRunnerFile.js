@@ -1,1 +1,1 @@
-somaColuna3DoMeio += somaColuna3
+i
