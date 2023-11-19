@@ -25,5 +25,9 @@ let lines = conteudoArquivo.split(quebraLinhaWindows);
 
 let [A, B] = lines.shift().split(" ");
 
-
-console.log(multiplos)
+if(A % B === 0 || B % A === 0){
+    console.log("Sao Multiplos")
+}
+else{
+    console.log("Nao sao Multiplos")
+}

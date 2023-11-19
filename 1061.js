@@ -22,18 +22,10 @@ let lines = conteudoArquivo.split(quebraLinhaWindows);
 //console.clear();
 //para ler linhas com um unico valor na mesma linha use o comando a seguir
 
-let N = lines.shift();
-let result;
+let startDay = lines.shift();
+let [startHours, startMinutes, startSeconds] = lines.shift().split(" : ");
+let finalDay = lines.shift();
+let [finalHours, finalMinutes, finalSeconds] = lines.shift().split(" : ");
+let resultHours
 
 
-for (let i = 0; i < N; i++) {
-    let [X, Y] = lines.shift().split(" ");
-    X = parseInt(X);
-    Y = parseInt(Y);
-    if (Y === 0) {
-        console.log(`divisao impossivel`);
-    } else {
-        result = (X / Y).toFixed(1);
-        console.log(result);
-    }
-}

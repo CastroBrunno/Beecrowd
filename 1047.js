@@ -23,20 +23,42 @@ let lines = conteudoArquivo.split(quebraLinhaWindows);
 //para ler linhas com um unico valor na mesma linha use o comando a seguir
 //let codigo = lines.shift();
 
-let [inicial, final] = lines.shift().split(" ");
-inicial = parseInt(inicial);
-final = parseInt(final)
+let [horaInicial, minutoInicial, horaFinal, minutoFinal] = lines.shift().split(" ");
+
+horaInicial = parseInt(horaInicial);
+horaFinal = parseInt(horaFinal);
+minutoInicial = parseInt(minutoInicial);
+minutoFinal = parseInt(minutoFinal);
+
+let horas = 0;
+let minutos = 0;
 
 
+if (horaInicial < horaFinal) {
+    let resultadoHoras = Math.abs(horaInicial - horaFinal);
+    horas = resultadoHoras;
+} else if (horaInicial > horaFinal) {
+    let resultadoHoras = 24 - (horaInicial - horaFinal);
+    horas = resultadoHoras;
+}else{
+    horas = 24
+}
 
-if (inicial == final) {
-    console.log(`O JOGO DUROU 24 HORA(S)`)
+
+if (minutoInicial == minutoFinal) {
+    minutos = 0;
 } else {
-    if (inicial < final) {
-        let temp = Math.abs(inicial - final);
-        console.log(`O JOGO DUROU ${temp} HORA(S)`);
-    } else if (inicial > final) {
-        let temp = 24 - (inicial - final);
-        console.log(`O JOGO DUROU ${temp} HORA(S)`);
+    if (minutoInicial < minutoFinal) {
+        let resultadoMinutos = Math.abs(minutoInicial - minutoFinal);
+        minutos = resultadoMinutos;
+    } else if (minutoInicial > minutoFinal) {
+        let resultadoMinutos = 60 - (minutoInicial - minutoFinal);
+        minutos = resultadoMinutos;
+        horas--;
+        if (resultadoMinutos >= 60) {
+            horas++;
+        }
     }
 }
+
+console.log(`O JOGO DUROU ${horas} HORA(S) E ${minutos} MINUTO(S)`);
