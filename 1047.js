@@ -30,35 +30,16 @@ horaFinal = parseInt(horaFinal);
 minutoInicial = parseInt(minutoInicial);
 minutoFinal = parseInt(minutoFinal);
 
-let horas = 0;
-let minutos = 0;
-
-
-if (horaInicial < horaFinal) {
-    let resultadoHoras = Math.abs(horaInicial - horaFinal);
-    horas = resultadoHoras;
-} else if (horaInicial > horaFinal) {
-    let resultadoHoras = 24 - (horaInicial - horaFinal);
-    horas = resultadoHoras;
-}else{
-    horas = 24
+var totalMin = (minutoFinal-minutoInicial);
+var totalHours = (horaFinal-horaInicial);
+if (totalMin < 0) 
+{
+    totalMin += 60;
+    totalHours--;
 }
-
-
-if (minutoInicial == minutoFinal) {
-    minutos = 0;
-} else {
-    if (minutoInicial < minutoFinal) {
-        let resultadoMinutos = Math.abs(minutoInicial - minutoFinal);
-        minutos = resultadoMinutos;
-    } else if (minutoInicial > minutoFinal) {
-        let resultadoMinutos = 60 - (minutoInicial - minutoFinal);
-        minutos = resultadoMinutos;
-        horas--;
-        if (resultadoMinutos >= 60) {
-            horas++;
-        }
-    }
+if (totalHours < 0) 
+{
+    totalHours+=24;
 }
-
-console.log(`O JOGO DUROU ${horas} HORA(S) E ${minutos} MINUTO(S)`);
+if (horaInicial == horaFinal && minutoInicial == minutoFinal) console.log('O JOGO DUROU 24 HORA(S) E 0 MINUTO(S)');
+else console.log('O JOGO DUROU '+ totalHours + ' HORA(S) E ' + totalMin + ' MINUTO(S)');

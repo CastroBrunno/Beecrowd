@@ -1,1 +1,1 @@
-i
+l1 = input.split("\n")

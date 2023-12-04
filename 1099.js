@@ -19,33 +19,42 @@ let lines = conteudoArquivo.split(quebraLinhaWindows);
 
 ///////////////////////COLAR NO BEECROWD O CODIGO DESTE PONTO EM DIANTE///////////////////
 //para ler linhas com mais de um valor na mesma linha use o comando a seguir
+//let [inicial, final] = lines.shift().split(" "); 
 //console.clear();
 //para ler linhas com um unico valor na mesma linha use o comando a seguir
-//let codigo = lines.shift();
 
-let casos = Number(lines.shift());
-let ratos = 0
-let sapos = 0
-let coelhos = 0
-let total = 0
+let numCasos = lines.shift();
+let soma = 0
+let temp = 0
 
-for (let i = 0; i < casos; i++) {
-    let [quantidade, valor] = lines.shift().split(" ");
-    if (valor == "C"){
-        coelhos += parseInt(quantidade)  
-    } 
-    else if (valor == "R") {
-        ratos += parseInt(quantidade)
-    } 
-    else {sapos += parseInt(quantidade)} 
+for (let i = 0; i < numCasos; i++) {
+    let [valor1, valor2] = lines.shift().split(" ");
+    if (valor1 < valor2) {
+        for (let i = valor1; i < valor2; i++) {
+            if (temp == 0) {
+                temp++
+            } else if (i % 2 != 0) {
+                soma += Number(i)
+            }
+
+        }
+        console.log(soma)
+        soma = 0
+        temp = 0
+    } else if (valor1 > valor2) {
+        for (let i = valor2; i < valor1; i++) {
+            if (temp == 0) {
+                temp++
+            } else if (i % 2 != 0) {
+                soma += i
+            }
+        }
+        console.log(soma)
+        soma = 0
+        temp = 0
+    } else if(valor1 === valor2) {
+        console.log(0)
+        soma = 0
+    }
+
 }
-
-total = (coelhos + ratos + sapos);
-console.log(`Total: ${total} cobaias`);
-console.log(`Total de coelhos: ${coelhos}`);
-console.log(`Total de ratos: ${ratos}`);
-console.log(`Total de sapos: ${sapos}`);
-console.log(`Percentual de coelhos: ${((coelhos / total) * 100).toFixed(2)} %`);
-console.log(`Percentual de ratos: ${((ratos / total) * 100).toFixed(2)} %`);
-console.log(`Percentual de sapos: ${((sapos / total) * 100).toFixed(2)} %`);
-

@@ -25,7 +25,7 @@ let lines = conteudoArquivo.split(quebraLinhaWindows);
 //let codigo = lines.shift();
 
 
-let N = Number(lines.shift()[0])
+let N = Number(lines.shift())
 
 for(let i = 0; i < N; i++){
     let [a, b, c] = lines.shift().split(" "); 
